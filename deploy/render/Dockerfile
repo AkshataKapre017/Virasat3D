@@ -53,4 +53,6 @@ ENV HL_ENV=prod \
     OMP_NUM_THREADS=1
 WORKDIR /home/app/heritagelens/backend
 EXPOSE 10000
-CMD ["sh", "-c", "exec python -m app.cli serve --host 0.0.0.0 --port ${PORT:-10000}"]
+
+CMD ["sh", "-c", "python -m app.cli migrate && exec python -m app.cli serve --host 0.0.0.0 --port ${PORT:-10000}"]
+
