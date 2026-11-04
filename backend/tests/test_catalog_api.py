@@ -220,7 +220,7 @@ def test_culture_section_filters_searches_and_pages(seeded: TestClient) -> None:
             await session.commit()
 
     assert seeded.portal is not None
-    seeded.portal.call(add_category_data())
+    seeded.portal.call(add_category_data)
     expanded = get(seeded, "/culture", category="oral_history")
     assert expanded["total"] == 1 and expanded["items"][0]["name"] == "Oral history"
     assert {option["value"] for option in expanded["categories"]} >= {"oral_history"}

@@ -3,24 +3,91 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  --color-page-bg: #f7f2ea;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f4ecdf;
   --color-card-bg: #ffffff;
+  --color-text: #14110f;
+  --color-text-soft: #3d3631;
+  --color-text-muted: #6b6159;
+  --color-border: #d9c8ad;
+  --color-border-strong: #c7b18d;
+  --color-nav-bg: #1a1714;
+  --color-nav-text: #f7f3ee;
+  --color-nav-muted: #d8cdc0;
+  --color-nav-border: rgb(255 255 255 / 0.14);
+  --color-nav-focus: #f5c45e;
+  --color-sand: #f4ecdf;
+  --color-sandstone: #e5d5b5;
+  --color-sandstone-dark: #c7b18d;
+  --color-terracotta: #9a3412;
+  --color-terracotta-dark: #7c2d12;
+  --color-terracotta-soft: #f8e3d8;
+  --color-indigo-ink: #1e3a5f;
+  --color-indigo-ink-dark: #142a46;
+  --color-indigo-soft: #e2e9f2;
+  --color-ochre: #b45309;
+  --color-ochre-soft: #fbecd5;
+  --color-moss: #3f6212;
+  --color-moss-soft: #e8f0d8;
+  --color-danger: #b91c1c;
+  --color-danger-soft: #fde2e2;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.dark) {
+    --color-page-bg: #120f0d;
+    --color-surface: #1a1714;
+    --color-surface-alt: #201c18;
+    --color-card-bg: #1a1714;
+    --color-text: #fbf7f0;
+    --color-text-soft: #d8cdc0;
+    --color-text-muted: #9e9183;
+    --color-border: #3b342e;
+    --color-border-strong: #4d4439;
+    --color-nav-bg: #181512;
+    --color-nav-text: #ffffff;
+    --color-nav-muted: #d8cdc0;
+    --color-nav-border: rgb(255 255 255 / 0.18);
+    --color-nav-focus: #f5c45e;
+    --color-sand: #1d1916;
+    --color-sandstone: #332d26;
+    --color-sandstone-dark: #4d4439;
+    --color-terracotta: #e06841;
+    --color-terracotta-dark: #f07b54;
+    --color-terracotta-soft: #381c13;
+    --color-indigo-ink: #1a3252;
+    --color-indigo-ink-dark: #0f1d30;
+    --color-indigo-soft: #1e2d40;
+    --color-ochre: #f59e0b;
+    --color-ochre-soft: #3d2807;
+    --color-moss: #84cc16;
+    --color-moss-soft: #253512;
+    --color-danger: #ef4444;
+    --color-danger-soft: #451818;
+    color-scheme: dark;
+  }
+}
+
+html.dark {
+  --color-page-bg: #120f0d;
+  --color-surface: #1a1714;
+  --color-surface-alt: #201c18;
+  --color-card-bg: #1a1714;
+  --color-text: #fbf7f0;
+  --color-text-soft: #d8cdc0;
+  --color-text-muted: #9e9183;
+  --color-border: #3b342e;
+  --color-border-strong: #4d4439;
   --color-nav-bg: #181512;
   --color-nav-text: #ffffff;
   --color-nav-muted: #d8cdc0;
   --color-nav-border: rgb(255 255 255 / 0.18);
   --color-nav-focus: #f5c45e;
-}
-
-html.dark,
-.dark {
-  color-scheme: dark;
-  --color-parchment: #12100e;
   --color-sand: #1d1916;
   --color-sandstone: #332d26;
   --color-sandstone-dark: #4d4439;
-  --color-ink: #fbf7f0;
-  --color-ink-soft: #d8cdc0;
-  --color-muted: #9e9183;
   --color-terracotta: #e06841;
   --color-terracotta-dark: #f07b54;
   --color-terracotta-soft: #381c13;
@@ -33,9 +100,7 @@ html.dark,
   --color-moss-soft: #253512;
   --color-danger: #ef4444;
   --color-danger-soft: #451818;
-  --color-card-bg: #1a1714;
-  --shadow-card: 0 1px 3px rgb(0 0 0 / 0.4), 0 4px 16px rgb(0 0 0 / 0.35);
-  --shadow-lift: 0 2px 6px rgb(0 0 0 / 0.5), 0 12px 32px rgb(0 0 0 / 0.5);
+  color-scheme: dark;
 }
 
 /*
@@ -112,12 +177,13 @@ html.dark,
 @layer base {
   html {
     color-scheme: light;
+    background: var(--color-page-bg);
     -webkit-text-size-adjust: 100%;
   }
 
   body {
-    background: var(--color-parchment);
-    color: var(--color-ink);
+    background: var(--color-page-bg);
+    color: var(--color-text);
     font-family: var(--font-sans);
     text-rendering: optimizeLegibility;
   }
@@ -226,14 +292,14 @@ html.dark,
   }
   .btn-secondary {
     background: var(--color-card-bg, white);
-    color: var(--color-ink);
+    color: var(--color-text);
     border: 1px solid var(--color-sandstone-dark);
   }
   .btn-secondary:not(:disabled):hover {
     background: var(--color-sand);
   }
   .btn-ghost {
-    color: var(--color-ink-soft);
+    color: var(--color-text-soft);
   }
   .btn-ghost:not(:disabled):hover {
     background: var(--color-sand);
@@ -243,7 +309,7 @@ html.dark,
     width: 100%;
     border: 1px solid var(--color-sandstone-dark);
     background: var(--color-card-bg, white);
-    color: var(--color-ink);
+    color: var(--color-text);
     border-radius: 0.6rem;
     padding: 0.55rem 0.75rem;
     font-size: 0.95rem;
@@ -262,7 +328,7 @@ html.dark,
     padding: 0.3rem 0.75rem;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--color-ink-soft);
+    color: var(--color-text-soft);
     transition: background-color 150ms;
   }
   .chip:hover {
@@ -284,7 +350,7 @@ html.dark,
   }
   .dark .aria-pressed\:bg-white[aria-pressed="true"] {
     background-color: var(--color-card-bg);
-    color: var(--color-ink);
+    color: var(--color-text);
   }
   .dark input,
   .dark textarea,
@@ -301,7 +367,7 @@ html.dark,
   box-shadow: var(--shadow-lift) !important;
   font-family: var(--font-sans);
   background: var(--color-card-bg, white) !important;
-  color: var(--color-ink) !important;
+  color: var(--color-text) !important;
 }
 .maplibregl-popup-anchor-top .maplibregl-popup-tip {
   border-bottom-color: var(--color-card-bg, white) !important;

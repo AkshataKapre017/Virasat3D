@@ -9,11 +9,14 @@ const eslintConfig = defineConfig([
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
+    "**/.next/**",
     "out/**",
     "build/**",
+    "**/build/**",
     "next-env.d.ts",
     // Third-party bundles copied by scripts/copy-vendor.mjs.
     "public/vendor/**",
+    "**/public/vendor/**",
   ]),
 ]);
 

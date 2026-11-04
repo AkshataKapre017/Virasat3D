@@ -28,12 +28,11 @@ export function CultureBrowser() {
   const searchString = params.toString();
   const category = params.get("category") || null;
   const region = params.get("region") || null;
-  const [query, setQuery] = useState(params.get("q") ?? "");
+  const [query, setQuery] = useState(() => params.get("q") ?? "");
   const deferredQuery = useDeferredValue(query.trim());
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    setQuery(params.get("q") ?? "");
     setPage(1);
   }, [searchString]);
 

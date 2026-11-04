@@ -13,47 +13,52 @@ vi.mock("next/navigation", () => ({
   useSearchParams: () => new URLSearchParams(mocks.location.search),
 }));
 
-vi.mock("@tanstack/react-query", () => ({
-  useQuery: (options: unknown) => {
-    mocks.listQuery(options);
-    return {
-      data: {
-        items: [
-          {
-            id: 1,
-            category: "dance",
-            name: "Garba",
-            name_hi: null,
-            region: "Gujarat",
-            summary: "A circular devotional dance performed during Navratri.",
-            popular_time: null,
-            highlights: [],
-            image_url: null,
-            image_alt: null,
-            credit: null,
-            licence: null,
-            source_url: null,
-          },
-        ],
-        total: 1,
-        limit: 12,
-        offset: 0,
-        all_count: 4,
-        categories: [
-          { value: "craft", label: "Craft", count: 1 },
-          { value: "dance", label: "Dance", count: 1 },
-          { value: "festival", label: "Festival", count: 1 },
-          { value: "oral_history", label: "Oral History", count: 0 },
-        ],
-        regions: [{ value: "Gujarat", label: "Gujarat", count: 1 }],
-      },
-      error: null,
-      isPending: false,
-      isFetching: false,
-      refetch: vi.fn(),
-    };
-  },
-}));
+vi.mock("@tanstack/react-query", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@tanstack/react-query")>();
+  return {
+    ...actual,
+    queryOptions: (options: unknown) => options,
+    useQuery: (options: unknown) => {
+      mocks.listQuery(options);
+      return {
+        data: {
+          items: [
+            {
+              id: 1,
+              category: "dance",
+              name: "Garba",
+              name_hi: null,
+              region: "Gujarat",
+              summary: "A circular devotional dance performed during Navratri.",
+              popular_time: null,
+              highlights: [],
+              image_url: null,
+              image_alt: null,
+              credit: null,
+              licence: null,
+              source_url: null,
+            },
+          ],
+          total: 1,
+          limit: 12,
+          offset: 0,
+          all_count: 4,
+          categories: [
+            { value: "craft", label: "Craft", count: 1 },
+            { value: "dance", label: "Dance", count: 1 },
+            { value: "festival", label: "Festival", count: 1 },
+            { value: "oral_history", label: "Oral History", count: 0 },
+          ],
+          regions: [{ value: "Gujarat", label: "Gujarat", count: 1 }],
+        },
+        error: null,
+        isPending: false,
+        isFetching: false,
+        refetch: vi.fn(),
+      };
+    },
+  };
+});
 
 import { CultureBrowser } from "@/components/culture/culture-browser";
 
@@ -72,14 +77,14 @@ describe("CultureBrowser", () => {
     expect(mocks.listQuery.mock.calls[0]?.[0]).toMatchObject({
       queryKey: expect.arrayContaining([expect.objectContaining({ category: "dance" })]),
     });
-    expect(screen.getByRole("button", { name: "Dance 1" }).getAttribute("aria-pressed")).toBe("true");
-    expect(screen.getByRole("button", { name: "Oral History 0" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: /Dance\s*1/ }).getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("button", { name: /Oral History\s*0/ })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "Garba" })).toBeTruthy();
   });
 
   it("writes the selected category to the shareable URL", () => {
     render(<CultureBrowser />);
-    fireEvent.click(screen.getByRole("button", { name: "Festival 1" }));
+    fireEvent.click(screen.getByRole("button", { name: /Festival\s*1/ }));
 
     expect(mocks.replace).toHaveBeenCalledWith("/culture?category=festival", { scroll: false });
   });

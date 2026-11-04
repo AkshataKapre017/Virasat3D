@@ -9,7 +9,7 @@
                     "prebuild":  "node scripts/copy-vendor.mjs",
                     "build":  "next build",
                     "start":  "next start",
-                    "lint":  "eslint",
+                    "lint":  "node scripts/check-hardcoded-colors.mjs \u0026\u0026 eslint",
                     "typecheck":  "next typegen \u0026\u0026 tsc --noEmit",
                     "test":  "vitest run",
                     "gen:api":  "openapi-typescript src/lib/api/openapi.json -o src/lib/api/schema.d.ts"
