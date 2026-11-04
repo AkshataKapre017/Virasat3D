@@ -1,13 +1,14 @@
+
 {
   "assets": {
     "data": {
-      "url": "https://github.com/YOUR-USERNAME/HeritageLens/releases/download/deploy-assets/heritagelens-data-c4e64f70f1dd.tar.gz",
+      "url": "https://github.com/AkshataKapre017/Virasat3D/releases/download/deploy-assets/heritagelens-data-c4e64f70f1dd.tar.gz",
       "sha256": "c4e64f70f1ddfcac8255da52d1313422a6632f1fb292cf11228bb7b1f87da653",
       "bytes": 44055366,
       "dest": "backend/var"
     },
     "model": {
-      "url": "https://github.com/YOUR-USERNAME/HeritageLens/releases/download/deploy-assets/lean-minilm-6ed931b8176f.tar.gz",
+      "url": "https://github.com/AkshataKapre017/Virasat3D/releases/download/deploy-assets/lean-minilm-6ed931b8176f.tar.gz",
       "sha256": "6ed931b8176fee51a32f417aa92fc98671af4bcaeccc066bf5ec09ce7183c6a2",
       "bytes": 219528065,
       "dest": "backend/var/models/lean-minilm"
