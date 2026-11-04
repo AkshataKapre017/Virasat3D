@@ -54,5 +54,5 @@ ENV HL_ENV=prod \
 WORKDIR /home/app/heritagelens/backend
 EXPOSE 10000
 
-CMD ["sh", "-c", "python -m app.cli migrate && exec python -m app.cli serve --host 0.0.0.0 --port ${PORT:-10000}"]
+CMD ["sh", "-c", "python -m app.cli migrate && if [ \"${HL_RUN_SEED:-false}\" = \"true\" ]; then python -m app.cli seed --offline --no-process || exit 1; fi && exec python -m app.cli serve --host 0.0.0.0 --port ${PORT:-10000}"]
 
