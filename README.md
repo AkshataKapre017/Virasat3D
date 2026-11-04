@@ -1,21 +1,28 @@
+[▶ Watch the Virasat3D Demo Video](https://drive.google.com/file/d/1q8FazwDBSN-CmsolxroiC6NowPGshWGT/view?usp=sharing)
+
 # Virasat3D
 
 Virasat3D is a heritage discovery and preservation platform for Indian cultural and architectural sites. It combines a searchable archive, interactive atlas, geotagged photo collections, and immersive 3D digital twins so people can explore heritage through stories, maps, and spatial reconstruction.
 
 ## Overview
 
-The project helps surface heritage knowledge that is often scattered across field notes, PDFs, notebooks, photos, and local records. Virasat3D brings those materials together into a single experience where users can:    
+The project helps surface heritage knowledge that is often scattered across field notes, PDFs, notebooks, photos, and local records. Virasat3D brings those materials together into a single experience where users can:
 
-- browse heritage sites and crafts
-- search across regional languages and scripts
-- inspect archival content with translations and context
-- explore journeys and story-led heritage narratives
-- open site-specific 3D reconstructions in-browser
-<img wid<img width="1886" height="867" alt="image" src="https://github.com/user-attachments/assets/82f0d108-d988-4f35-838f-3f81f29d5e95" />
-<img width="1891" height="935" alt="image" src="https://github.com/user-attachments/assets/05a511aa-6f45-4234-8a4c-248f784a4ccc" />
-<img width="1870" height="953" alt="image" src="https://github.com/user-attachments/assets/575bf8b8-5971-4c46-b9b8-9e802d4abfbf" />
-<img width="1896" height="872" alt="image" src="https://github.com/user-attachments/assets/e8084f5b-83d4-4505-b5f8-79245b8fcf15" />
-<img width="1840" height="781" alt="image" src="https://github.com/user-attachments/assets/6309531c-7ad6-48ed-9281-14ef7753e96f" />
+- Browse heritage sites and crafts
+- Search across regional languages and scripts
+- Inspect archival content with translations and context
+- Explore journeys and story-led heritage narratives
+- Open site-specific 3D reconstructions in-browser
+
+<img width="1886" height="867" alt="Virasat3D screenshot 1" src="https://github.com/user-attachments/assets/82f0d108-d988-4f35-838f-3f81f29d5e95" />
+
+<img width="1891" height="935" alt="Virasat3D screenshot 2" src="https://github.com/user-attachments/assets/05a511aa-6f45-4234-8a4c-248f784a4ccc" />
+
+<img width="1870" height="953" alt="Virasat3D screenshot 3" src="https://github.com/user-attachments/assets/575bf8b8-5971-4c46-b9b8-9e802d4abfbf" />
+
+<img width="1896" height="872" alt="Virasat3D screenshot 4" src="https://github.com/user-attachments/assets/e8084f5b-83d4-4505-b5f8-79245b8fcf15" />
+
+<img width="1840" height="781" alt="Virasat3D screenshot 5" src="https://github.com/user-attachments/assets/6309531c-7ad6-48ed-9281-14ef7753e96f" />
 
 ## Key features
 
@@ -33,7 +40,7 @@ The project helps surface heritage knowledge that is often scattered across fiel
 - Frontend: Next.js, TypeScript, Tailwind CSS, MapLibre, TanStack Query
 - Backend: FastAPI, SQLAlchemy, SQLite/PostgreSQL-ready app configuration
 - Data processing: OCR, translation, indexing, metadata extraction, hybrid search
-- 3D: digital reconstruction workflows for supported heritage sites
+- 3D: Digital reconstruction workflows for supported heritage sites
 
 ## Repository structure
 
@@ -54,13 +61,13 @@ HeritageLens/
 ├── deploy/               deployment config and smoke checks
 ├── README.md             project overview
 ├── PROJECT_STATUS.md     internal project status notes
-├── render.yaml           Render deployment config
+├── render.yaml            Render deployment config
 └── .gitignore
 ```
 
 ## Getting started
 
-### 1) Backend
+### 1. Backend
 
 ```bash
 cd backend
@@ -75,7 +82,7 @@ python -m app.cli serve
 
 The backend runs at `http://127.0.0.1:8000` and exposes docs at `/docs`.
 
-### 2) Frontend
+### 2. Frontend
 
 ```bash
 cd frontend
