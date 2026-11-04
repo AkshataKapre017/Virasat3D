@@ -2,7 +2,7 @@
 # The web app is deployed separately on Vercel with API_ORIGIN pointing at this service (see README).
 services:
   - type: web
-    name: heritagelens-hc26
+    name: virasat3d-api-akshata
     runtime: docker
     plan: free
     region: singapore
