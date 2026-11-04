@@ -112,7 +112,11 @@ async def upsert_sites(session: AsyncSession, ctx: JobContext) -> dict[str, Site
 
 async def upsert_culture(session: AsyncSession) -> int:
     rows = _load("culture.json")
+    wanted = {(row["category"], row["name"]) for row in rows}
     existing = {(c.category, c.name): c for c in (await session.scalars(select(CultureItem))).all()}
+    for key, item in existing.items():
+        if key not in wanted:
+            await session.delete(item)
     for row in rows:
         item = existing.get((row["category"], row["name"]))
         if item is None:

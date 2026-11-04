@@ -798,13 +798,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "enum": [
-                    "craft",
-                    "dance",
-                    "festival",
-                    "media"
-                  ],
-                  "type": "string"
+                  "type": "string",
+                  "maxLength": 80
                 },
                 {
                   "type": "null"
@@ -837,7 +832,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "string"
+                  "type": "string",
+                  "maxLength": 120
                 },
                 {
                   "type": "null"
@@ -876,7 +872,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Page_CultureOut_"
+                  "$ref": "#/components/schemas/CulturePage"
                 }
               }
             }
@@ -3540,12 +3536,6 @@
           },
           "category": {
             "type": "string",
-            "enum": [
-              "craft",
-              "dance",
-              "festival",
-              "media"
-            ],
             "title": "Category"
           },
           "name": {
@@ -4712,7 +4702,17 @@
         ],
         "title": "Page[AssetBrief]"
       },
-      "Page_CultureOut_": {
+      "CultureFilterOption": {
+        "properties": {
+          "value": { "type": "string", "title": "Value" },
+          "label": { "type": "string", "title": "Label" },
+          "count": { "type": "integer", "title": "Count" }
+        },
+        "type": "object",
+        "required": ["value", "label", "count"],
+        "title": "CultureFilterOption"
+      },
+      "CulturePage": {
         "properties": {
           "items": {
             "items": {
@@ -4721,27 +4721,24 @@
             "type": "array",
             "title": "Items"
           },
-          "total": {
-            "type": "integer",
-            "title": "Total"
+          "total": { "type": "integer", "title": "Total" },
+          "limit": { "type": "integer", "title": "Limit" },
+          "offset": { "type": "integer", "title": "Offset" },
+          "all_count": { "type": "integer", "title": "All Count" },
+          "categories": {
+            "items": { "$ref": "#/components/schemas/CultureFilterOption" },
+            "type": "array",
+            "title": "Categories"
           },
-          "limit": {
-            "type": "integer",
-            "title": "Limit"
-          },
-          "offset": {
-            "type": "integer",
-            "title": "Offset"
+          "regions": {
+            "items": { "$ref": "#/components/schemas/CultureFilterOption" },
+            "type": "array",
+            "title": "Regions"
           }
         },
         "type": "object",
-        "required": [
-          "items",
-          "total",
-          "limit",
-          "offset"
-        ],
-        "title": "Page[CultureOut]"
+        "required": ["items", "total", "limit", "offset", "all_count", "categories", "regions"],
+        "title": "CulturePage"
       },
       "Page_JobOut_": {
         "properties": {

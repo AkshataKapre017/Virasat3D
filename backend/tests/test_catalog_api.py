@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from collections import Counter
 from collections.abc import Iterator
 from functools import partial
 from typing import Any
@@ -10,6 +11,7 @@ from typing import Any
 import pytest
 from fastapi.testclient import TestClient
 
+from app.db.models import CultureItem
 from app.main import create_app
 from app.seed.loader import DATA_DIR, DISABLED_SITE_SLUGS, run_seed
 from tests.conftest import make_settings
@@ -163,12 +165,20 @@ def test_twin_gallery_streams_meshes(seeded: TestClient) -> None:
 
 def test_culture_section_filters_searches_and_pages(seeded: TestClient) -> None:
     rows = json.loads((DATA_DIR / "culture.json").read_text(encoding="utf-8"))
+    category_counts = Counter(row["category"] for row in rows)
+    assert category_counts and all(count >= 3 for count in category_counts.values())
     page = get(seeded, "/culture")
     assert page["total"] == len(page["items"]) == len(rows)
     assert [item["name"] for item in page["items"]] == sorted(item["name"] for item in page["items"])
     expected = {row["name"]: row for row in rows}
+    assert page["all_count"] == page["total"]
+    assert {option["value"] for option in page["categories"]} == {row["category"] for row in rows}
+    for option in page["categories"]:
+        category_page = get(seeded, "/culture", category=option["value"])
+        assert option["count"] == category_page["total"]
+        assert category_page["all_count"] == page["total"]
     for item in page["items"]:
-        assert item["category"] in {"craft", "dance", "festival", "media"}
+        assert item["category"] in {option["value"] for option in page["categories"]}
         assert item["region"] and isinstance(item["highlights"], list)
         assert item["popular_time"] == expected[item["name"]]["popular_time"]
         assert item["popular_time"]
@@ -176,6 +186,7 @@ def test_culture_section_filters_searches_and_pages(seeded: TestClient) -> None:
     crafts = get(seeded, "/culture", category="craft")
     assert crafts["total"] == sum(row["category"] == "craft" for row in rows)
     assert all(item["category"] == "craft" for item in crafts["items"])
+    assert get(seeded, "/culture", category="oral_history")["total"] == 0
 
     assert [item["name"] for item in get(seeded, "/culture", q="patola")["items"]] == ["Patan Patola"]
     assert [item["name"] for item in get(seeded, "/culture", q="पटोला")["items"]] == ["Patan Patola"]
@@ -183,6 +194,8 @@ def test_culture_section_filters_searches_and_pages(seeded: TestClient) -> None:
     regional = get(seeded, "/culture", region="Kutch, Gujarat")
     assert regional["total"] == sum(row["region"] == "Kutch, Gujarat" for row in rows)
     assert all(item["region"] == "Kutch, Gujarat" for item in regional["items"])
+    assert {option["value"] for option in regional["categories"]} == {row["category"] for row in rows}
+    assert regional["all_count"] == regional["total"]
 
     page1, page2 = get(seeded, "/culture", limit=3), get(seeded, "/culture", limit=3, offset=3)
     assert not {item["id"] for item in page1["items"]} & {item["id"] for item in page2["items"]}
@@ -192,6 +205,25 @@ def test_culture_section_filters_searches_and_pages(seeded: TestClient) -> None:
     assert detail == page1["items"][0]
     missing = seeded.get(f"{API}/culture/999999")
     assert missing.status_code == 404 and missing.headers["content-type"].startswith("application/problem+json")
+
+    async def add_category_data() -> None:
+        async with seeded.app.state.services.db.sessionmaker() as session:
+            session.add(
+                CultureItem(
+                    category="oral_history",
+                    name="Oral history",
+                    region="Gujarat",
+                    summary="Recorded community histories.",
+                    highlights=[],
+                )
+            )
+            await session.commit()
+
+    assert seeded.portal is not None
+    seeded.portal.call(add_category_data())
+    expanded = get(seeded, "/culture", category="oral_history")
+    assert expanded["total"] == 1 and expanded["items"][0]["name"] == "Oral history"
+    assert {option["value"] for option in expanded["categories"]} >= {"oral_history"}
 
 
 def test_dashboard_stats_reflect_the_archive(seeded: TestClient) -> None:

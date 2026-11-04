@@ -173,7 +173,7 @@ class CultureOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     id: int
-    category: Literal["craft", "dance", "festival", "media"]
+    category: str
     name: str
     name_hi: str | None
     region: str
@@ -185,6 +185,18 @@ class CultureOut(BaseModel):
     credit: str | None
     licence: str | None
     source_url: str | None
+
+
+class CultureFilterOption(BaseModel):
+    value: str
+    label: str
+    count: int
+
+
+class CulturePage(Page[CultureOut]):
+    all_count: int
+    categories: list[CultureFilterOption]
+    regions: list[CultureFilterOption]
 
 
 # ---------------------------------------------------------------- journeys

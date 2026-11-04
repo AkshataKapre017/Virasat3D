@@ -1,27 +1,17 @@
-/** Culture section copy and category metadata (kept out of presentation components). */
-import type { CultureCategory, CultureItem } from "@/lib/api/types";
+import type { CultureCategoryOption, CultureItem } from "@/lib/api/types";
 
 export const CULTURE_PAGE_SIZE = 12;
 
-const CATEGORY_LABELS: Record<CultureCategory, string> = {
-  craft: "Craft",
-  dance: "Dance",
-  festival: "Festival",
-  media: "Media",
-};
-
-export const CULTURE_CATEGORY_TABS: readonly { value: CultureCategory | null; label: string }[] = [
-  { value: null, label: "All" },
-  ...(Object.entries(CATEGORY_LABELS) as [CultureCategory, string][]).map(([value, label]) => ({ value, label })),
-];
-
-export function cultureCategoryLabel(category: string): string {
-  return CATEGORY_LABELS[category as CultureCategory] ?? category;
+export function cultureCategoryLabel(category: string, options: readonly CultureCategoryOption[] = []): string {
+  return (
+    options.find((option) => option.value === category)?.label ??
+    category.replace(/[_-]+/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase())
+  );
 }
 
-export function cultureCreditLine(item: Pick<CultureItem, "credit" | "licence">): string | null {
+export function cultureCreditLine(item: Pick<CultureItem, "credit" | "licence">): string {
   const parts = [item.credit, item.licence].filter((part): part is string => Boolean(part));
-  return parts.length ? parts.join(" · ") : null;
+  return parts.length ? parts.join(" · ") : CULTURE_COPY.creditUnavailable;
 }
 
 export function cultureCountLabel(total: number, filtered: boolean): string {
@@ -37,13 +27,20 @@ export const CULTURE_COPY = {
   title: "Culture",
   intro:
     "Crafts, dances, festivals and recorded media from the field archive — the living practices that continue around India's built heritage.",
+  allCategories: "All",
   searchLabel: "Search culture",
   searchPlaceholder: "Search names, regions or summaries…",
   categoryFilterLabel: "Filter by category",
+  regionFilterLabel: "Filter by region",
+  allRegions: "All regions",
   clearFilters: "Clear filters",
   imagePlaceholder: "Image not available",
-  emptyTitle: "No culture entries match",
-  emptyBody: "Try another category or search term.",
+  hindiUnavailable: "Hindi name not available",
+  popularTimeLabel: "Popular time:",
+  popularTimeUnavailable: "Not specified",
+  creditUnavailable: "Image credit not provided",
+  emptyTitle: "Nothing here yet",
+  emptyBody: "Try another category, region or search term.",
   previous: "Previous",
   next: "Next",
   paginationLabel: "Culture pagination",

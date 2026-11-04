@@ -70,7 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <Providers>
-          <header className="sticky top-0 z-40 bg-gradient-to-b from-[#181512] via-[#14110f] to-[#0f0d0b] shadow-md">
+          <header className="sticky top-0 z-40 bg-[var(--color-nav-bg)] shadow-md">
             <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-2.5">
               <Logo />
               <nav aria-label="Primary" className="ml-2 hidden lg:block">

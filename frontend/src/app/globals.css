@@ -4,6 +4,11 @@
 
 :root {
   --color-card-bg: #ffffff;
+  --color-nav-bg: #181512;
+  --color-nav-text: #ffffff;
+  --color-nav-muted: #d8cdc0;
+  --color-nav-border: rgb(255 255 255 / 0.18);
+  --color-nav-focus: #f5c45e;
 }
 
 html.dark,
@@ -271,7 +276,7 @@ html.dark,
   }
 
   /* Dark mode specific overrides */
-  .dark .bg-white:not([class*="bg-white/"]):not(.keep-white) {
+  .dark .bg-white:not([class*="bg-white/"]) {
     background-color: var(--color-card-bg);
   }
   .dark .hover\:bg-white:hover {

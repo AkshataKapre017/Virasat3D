@@ -1028,11 +1028,8 @@ export interface components {
         CultureOut: {
             /** Id */
             id: number;
-            /**
-             * Category
-             * @enum {string}
-             */
-            category: "craft" | "dance" | "festival" | "media";
+            /** Category */
+            category: string;
             /** Name */
             name: string;
             /** Name Hi */
@@ -1403,8 +1400,17 @@ export interface components {
             /** Offset */
             offset: number;
         };
-        /** Page[CultureOut] */
-        Page_CultureOut_: {
+        /** CultureFilterOption */
+        CultureFilterOption: {
+            /** Value */
+            value: string;
+            /** Label */
+            label: string;
+            /** Count */
+            count: number;
+        };
+        /** CulturePage */
+        CulturePage: {
             /** Items */
             items: components["schemas"]["CultureOut"][];
             /** Total */
@@ -1413,6 +1419,12 @@ export interface components {
             limit: number;
             /** Offset */
             offset: number;
+            /** All Count */
+            all_count: number;
+            /** Categories */
+            categories: components["schemas"]["CultureFilterOption"][];
+            /** Regions */
+            regions: components["schemas"]["CultureFilterOption"][];
         };
         /** Page[JobOut] */
         Page_JobOut_: {
@@ -2442,7 +2454,7 @@ export interface operations {
     list_culture_api_v1_culture_get: {
         parameters: {
             query?: {
-                category?: ("craft" | "dance" | "festival" | "media") | null;
+                category?: string | null;
                 q?: string | null;
                 region?: string | null;
                 limit?: number;
@@ -2460,7 +2472,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["Page_CultureOut_"];
+                    "application/json": components["schemas"]["CulturePage"];
                 };
             };
             /** @description Validation Error */

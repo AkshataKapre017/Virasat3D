@@ -35,7 +35,7 @@ export function NavList({
 }) {
   return (
     <ul className={clsx("flex items-center gap-1", className)}>
-      {NAV.filter((item) => !("permission" in item) || permissions?.includes(item.permission)).map(({ href, label }) => {
+      {NAV.filter((item) => item.header && (!("permission" in item) || permissions?.includes(item.permission))).map(({ href, label }) => {
         const active = pathname !== undefined && isActive(pathname, href);
         return (
           <li key={href}>
