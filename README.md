@@ -112,10 +112,6 @@ Virasat3D is designed to make heritage more accessible, searchable, and immersiv
 
 This repository includes deployment-related files for hosting and smoke testing. Check the deploy configuration in `render.yaml` and the helper scripts under `deploy/` for production setup guidance.
 
-## Live links
-
-- Web app: [Add live URL]
-- API docs: [Add live API URL]
 
 ## System architecture
 
