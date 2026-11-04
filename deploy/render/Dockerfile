@@ -32,7 +32,11 @@ RUN mkdir -p backend/app && touch backend/app/__init__.py \
 COPY --chown=app deploy/render/fetch_assets.py deploy/render/assets.lock.json deploy/render/
 RUN python deploy/render/fetch_assets.py
 
+
 COPY --chown=app backend/app backend/app
+COPY --chown=app backend/migrations backend/migrations
+COPY --chown=app backend/alembic.ini backend/alembic.ini
+
 
 # Search embeds queries with the lean export (identical vectors to fastembed, ~250 MB for the whole API);
 # photo search (CLIP) is off because it alone needs ~350 MB more.
