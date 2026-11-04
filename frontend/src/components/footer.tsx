@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import { FOOTER_COPY, FOOTER_LINK_GROUPS } from "@/lib/nav";
 
@@ -8,22 +9,39 @@ const footerLinkClass =
   "rounded-sm text-[var(--color-nav-text)] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-nav-focus)]";
 
 export function Footer() {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState(2026);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
-    <footer aria-label="Site footer" className="mt-auto bg-[var(--color-nav-bg)] text-[var(--color-nav-text)]">
+    <footer
+      aria-label="Site footer"
+      className="mt-auto bg-[var(--color-nav-bg)] text-[var(--color-nav-text)]"
+    >
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-9 sm:px-6 md:grid-cols-[1.2fr_2fr] lg:px-8">
         <div className="max-w-sm">
-          <Link href="/" className={`${footerLinkClass} font-serif text-xl font-semibold`}>
+          <Link
+            href="/"
+            className={`${footerLinkClass} font-serif text-xl font-semibold`}
+          >
             {FOOTER_COPY.brand}
           </Link>
-          <p className="mt-2 text-sm leading-relaxed text-[var(--color-nav-muted)]">{FOOTER_COPY.description}</p>
+          <p className="mt-2 text-sm leading-relaxed text-[var(--color-nav-muted)]">
+            {FOOTER_COPY.description}
+          </p>
         </div>
 
-        <nav aria-label="Footer navigation" className="grid gap-6 sm:grid-cols-2">
+        <nav
+          aria-label="Footer navigation"
+          className="grid gap-6 sm:grid-cols-2"
+        >
           {FOOTER_LINK_GROUPS.map(({ label, links }) => (
             <div key={label}>
-              <h2 className="mb-3 text-sm font-semibold text-[var(--color-nav-text)]">{label}</h2>
+              <h2 className="mb-3 text-sm font-semibold text-[var(--color-nav-text)]">
+                {label}
+              </h2>
               <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
                 {links.map(({ href, footerLabel }) => (
                   <li key={href}>
