@@ -1,16 +1,15 @@
-
 {
   "assets": {
     "data": {
-      "url": "https://github.com/AkshataKapre017/Virasat3D/releases/download/deploy-assets/heritagelens-data-c4e64f70f1dd.tar.gz",
-      "sha256": "c4e64f70f1ddfcac8255da52d1313422a6632f1fb292cf11228bb7b1f87da653",
-      "bytes": 44055366,
+      "url": "https://github.com/AkshataKapre017/Virasat3D/releases/download/deploy-assets/heritagelens-data-0364836717c3.tar.gz",
+      "sha256": "0364836717c35fce0103dbcdd7a8dd0ec7a2238dc1b99a1593711feea879b3e9",
+      "bytes": 22964120,
       "dest": "backend/var"
     },
     "model": {
-      "url": "https://github.com/AkshataKapre017/Virasat3D/releases/download/deploy-assets/lean-minilm-6ed931b8176f.tar.gz",
-      "sha256": "6ed931b8176fee51a32f417aa92fc98671af4bcaeccc066bf5ec09ce7183c6a2",
-      "bytes": 219528065,
+      "url": "https://github.com/AkshataKapre017/Virasat3D/releases/download/deploy-assets/lean-minilm-0e53fa86c8b5.tar.gz",
+      "sha256": "0e53fa86c8b5698d2be678d60ef300f78b0c71fe0bb0c2581efdd18fe91c8b66",
+      "bytes": 219298185,
       "dest": "backend/var/models/lean-minilm"
     }
   }
