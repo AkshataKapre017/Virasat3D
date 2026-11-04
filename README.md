@@ -1,8 +1,8 @@
-[▶ Watch the Virasat3D Demo Video](https://drive.google.com/file/d/1q8FazwDBSN-CmsolxroiC6NowPGshWGT/view?usp=sharing)
-
 # Virasat3D
 
 Virasat3D is a heritage discovery and preservation platform for Indian cultural and architectural sites. It combines a searchable archive, interactive atlas, geotagged photo collections, and immersive 3D digital twins so people can explore heritage through stories, maps, and spatial reconstruction.
+
+# 🎬 [▶ WATCH DEMO VIDEO](https://drive.google.com/file/d/1q8FazwDBSN-CmsolxroiC6NowPGshWGT/view?usp=sharing)
 
 ## Overview
 
