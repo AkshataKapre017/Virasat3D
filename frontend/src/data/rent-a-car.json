@@ -1,0 +1,35 @@
+{
+  "title": "Rent a Car",
+  "categories": [
+    {
+      "id": "tourist-vehicles",
+      "label": "Tourist Vehicles",
+      "sections": [
+        {
+          "id": "outstations",
+          "title": "For Outstations only",
+          "rateLabel": "Rate for minimum 300 KM per day",
+          "rows": [
+            { "sr": 1, "vehicle": "Swift Dzire AC", "rate": 4014, "extraKmRate": 13.38 },
+            { "sr": 2, "vehicle": "Innova AC", "rate": 4776, "extraKmRate": 15.92 },
+            { "sr": 3, "vehicle": "Bolero AC", "rate": 4776, "extraKmRate": 15.92 },
+            { "sr": 4, "vehicle": "Innova Crysta AC", "rate": 5490, "extraKmRate": 18.3 },
+            { "sr": 5, "vehicle": "Mahindra Marazzo AC", "rate": 4776, "extraKmRate": 15.92 },
+            { "sr": 6, "vehicle": "Maruti Ertiga AC", "rate": 4500, "extraKmRate": 15 },
+            { "sr": 7, "vehicle": "Accent AC", "rate": 4014, "extraKmRate": 13.38 },
+            { "sr": 8, "vehicle": "Etios AC", "rate": 4014, "extraKmRate": 13.38 },
+            { "sr": 9, "vehicle": "12/14 Seater Tempo Traveller AC", "rate": 7500, "extraKmRate": 25 },
+            { "sr": 10, "vehicle": "12/14 Seater Tempo Traveller Non AC", "rate": 6900, "extraKmRate": 23 },
+            { "sr": 11, "vehicle": "29 (2X2) Seater AC", "rate": 11490, "extraKmRate": 38.3 },
+            { "sr": 12, "vehicle": "29 (2X2) Seater Non AC", "rate": 10551, "extraKmRate": 35.17 },
+            { "sr": 13, "vehicle": "41 (2X2) Seater AC", "rate": 15060, "extraKmRate": 50.2 },
+            { "sr": 14, "vehicle": "41 (2X2) Seater Non AC", "rate": 12525, "extraKmRate": 41.75 },
+            { "sr": 15, "vehicle": "56/52 Seater (3X2) Seater AC", "rate": 15480, "extraKmRate": 51.6 },
+            { "sr": 16, "vehicle": "56/52 Seater (3X2) Seater Non AC", "rate": 12510, "extraKmRate": 41.7 }
+          ],
+          "terms": []
+        }
+      ]
+    }
+  ]
+}

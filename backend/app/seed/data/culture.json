@@ -1,0 +1,218 @@
+[
+  {
+    "category": "craft",
+    "name": "Patan Patola",
+    "name_hi": "पाटन पटोला",
+    "region": "Patan, Gujarat",
+    "summary": "Double-ikat silk woven by the Salvi family of Patan, with every colour tied into the warp and weft before weaving. The geometric patterns are treated as family heirlooms rather than seasonal designs.",
+    "highlights": [
+      "Double-ikat resist dyeing on warp and weft",
+      "Geometric and floral patterns tied before weaving",
+      "A heirloom textile associated with Gujarat's mercantile trade"
+    ],
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/%27Patola%27_%28ritual_heirloom_cloth%29_from_Gujarat%2C_India%2C_late_18th_or_early_19th_century.jpg/1280px-%27Patola%27_%28ritual_heirloom_cloth%29_from_Gujarat%2C_India%2C_late_18th_or_early_19th_century.jpg",
+    "image_alt": "Detail of a patola cloth from Gujarat, late 18th or early 19th century",
+    "credit": "Unknown author / Wikimedia Commons",
+    "licence": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%27Patola%27_(ritual_heirloom_cloth)_from_Gujarat,_India,_late_18th_or_early_19th_century.jpg",
+    "popular_time": "October–March, during the cooler weaving season"
+  },
+  {
+    "category": "craft",
+    "name": "Ajrakh block printing",
+    "name_hi": "अजरख छपाई",
+    "region": "Kutch, Gujarat",
+    "summary": "Indigo and madder resist printing practised by Khatri artisans in Ajrakhpur. Patterns are built up through repeated washing, dyeing and hand-carved blocks.",
+    "highlights": [
+      "Hand-carved wooden blocks",
+      "Natural indigo and madder dyes",
+      "Patterns shared across Kutch and Sindh"
+    ],
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Ajrak_Craft.jpeg/1280px-Ajrak_Craft.jpeg",
+    "image_alt": "Kutch artisans holding up an Ajrakh block-printed cloth in indigo and red",
+    "credit": "Visdaviva / Wikimedia Commons",
+    "licence": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ajrak_Craft.jpeg",
+    "popular_time": "October–March, when the printed cloth dries evenly"
+  },
+  {
+    "category": "craft",
+    "name": "Bandhani",
+    "name_hi": "बांधनी",
+    "region": "Kutch and Jamnagar, Gujarat",
+    "summary": "Tie-and-dye cloth in which thousands of tiny knots resist the dye before the fabric is opened. Each pattern is named for the motif it forms, from dots to flowers.",
+    "highlights": [
+      "Thousands of tiny resist-tied knots",
+      "Natural dye baths",
+      "Distinct Kutch and Jamnagar traditions"
+    ],
+    "image_url": null,
+    "image_alt": null,
+    "credit": null,
+    "licence": null,
+    "source_url": null,
+    "popular_time": "October–March, during the wedding and festival season"
+  },
+  {
+    "category": "dance",
+    "name": "Garba",
+    "name_hi": "गरबा",
+    "region": "Gujarat",
+    "summary": "A circular devotional dance performed around a lit shrine during Navratri, inscribed on UNESCO's Intangible Cultural Heritage list in 2023. Claps, turns and call-and-response songs mark the rhythm.",
+    "highlights": [
+      "Performed around the garbo shrine",
+      "Call-and-response songs",
+      "Community circles that grow through the night"
+    ],
+    "image_url": null,
+    "image_alt": null,
+    "credit": null,
+    "licence": null,
+    "source_url": null,
+    "popular_time": "October, during Navratri"
+  },
+  {
+    "category": "dance",
+    "name": "Dandiya Raas",
+    "name_hi": "डांडिया रास",
+    "region": "Gujarat",
+    "summary": "A stick dance performed in paired circles, with wooden dandiya struck in time to the music. It is a fixture of Navratri nights alongside Garba.",
+    "highlights": [
+      "Paired circles with wooden dandiya",
+      "Rhythm kept by striking the sticks",
+      "A Navratri companion to Garba"
+    ],
+    "image_url": null,
+    "image_alt": null,
+    "credit": null,
+    "licence": null,
+    "source_url": null,
+    "popular_time": "October, during Navratri"
+  },
+  {
+    "category": "dance",
+    "name": "Tippani",
+    "name_hi": "टिप्पणी",
+    "region": "Saurashtra, Gujarat",
+    "summary": "A work-song dance from Saurashtra in which women strike the ground with wooden rods as they compact earth for building. The rhythm of the labour becomes the rhythm of the dance.",
+    "highlights": [
+      "Wooden rods struck against the ground",
+      "Songs that pace the work",
+      "A dance rooted in building labour"
+    ],
+    "image_url": null,
+    "image_alt": null,
+    "credit": null,
+    "licence": null,
+    "source_url": null,
+    "popular_time": "October–March, during the building season"
+  },
+  {
+    "category": "festival",
+    "name": "Navratri",
+    "name_hi": "नवरात्रि",
+    "region": "Gujarat",
+    "summary": "Nine nights of worship, music and dance dedicated to the goddess. Neighbourhoods gather around Garba and Dandiya Raas through the night.",
+    "highlights": [
+      "Nine nights of devotional observance",
+      "Garba and Dandiya Raas",
+      "Community shrines and nightly gatherings"
+    ],
+    "image_url": null,
+    "image_alt": null,
+    "credit": null,
+    "licence": null,
+    "source_url": null,
+    "popular_time": "September–October, nine nights around the new moon"
+  },
+  {
+    "category": "festival",
+    "name": "Uttarayan",
+    "name_hi": "उत्तरायण",
+    "region": "Gujarat",
+    "summary": "The kite festival marking the sun's northward journey, celebrated from rooftops and terraces. Paper kites fill the sky while neighbours share undhiyu and sweets.",
+    "highlights": [
+      "Kites flown from rooftops",
+      "Marks the winter solstice transition",
+      "Undhiyu and sweets shared with neighbours"
+    ],
+    "image_url": null,
+    "image_alt": null,
+    "credit": null,
+    "licence": null,
+    "source_url": null,
+    "popular_time": "14 January, Makar Sankranti"
+  },
+  {
+    "category": "festival",
+    "name": "Rann Utsav",
+    "name_hi": "रन उत्सव",
+    "region": "Kutch, Gujarat",
+    "summary": "A winter festival on the white salt flats of the Rann. Craft markets, music and desert excursions run through the season.",
+    "highlights": [
+      "Temporary desert camp",
+      "Craft and food stalls",
+      "Full-moon walks on the salt flats"
+    ],
+    "image_url": null,
+    "image_alt": null,
+    "credit": null,
+    "licence": null,
+    "source_url": null,
+    "popular_time": "November–February, under the full moon"
+  },
+  {
+    "category": "media",
+    "name": "Bhavai",
+    "name_hi": "भवाई",
+    "region": "Gujarat",
+    "summary": "A travelling folk-theatre form in which performers move between villages with improvised dialogue, music and social satire. Open-ground shows use stock characters with live tabla and sarangi accompaniment.",
+    "highlights": [
+      "Open-ground performance",
+      "Improvised dialogue and stock characters",
+      "Accompanied by the tabla and sarangi"
+    ],
+    "image_url": null,
+    "image_alt": null,
+    "credit": null,
+    "licence": null,
+    "source_url": null,
+    "popular_time": "October–March, at village fairs and festival nights"
+  },
+  {
+    "category": "media",
+    "name": "Dayro",
+    "name_hi": "दायरो",
+    "region": "Gujarat",
+    "summary": "A gathering for folk storytelling and singing, led by a narrator who moves between song, verse and spoken tales. Dayros often run late into the night at village and town events.",
+    "highlights": [
+      "Folk storytelling and song",
+      "Narrator-led evening gatherings",
+      "Gujarati oral traditions"
+    ],
+    "image_url": null,
+    "image_alt": null,
+    "credit": null,
+    "licence": null,
+    "source_url": null,
+    "popular_time": "October–March, at community gatherings and festivals"
+  },
+  {
+    "category": "media",
+    "name": "Gujarati cinema",
+    "name_hi": "गुजराती सिनेमा",
+    "region": "Gujarat",
+    "summary": "The regional film tradition of Gujarat, spanning early black-and-white productions to contemporary independent features. Its songs and dialogue draw on the state's folk theatre and oral storytelling.",
+    "highlights": [
+      "Regional-language feature films",
+      "Folk theatre and music influences",
+      "A growing independent film scene"
+    ],
+    "image_url": null,
+    "image_alt": null,
+    "credit": null,
+    "licence": null,
+    "source_url": null,
+    "popular_time": "Year-round; festival screenings peak in winter"
+  }
+]

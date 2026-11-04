@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "disclaimer": "Procedural typology reconstruction built from site metadata and approximate dimensions. It is not a measured survey or an accurate scan of the monument.",
+  "typologies": {
+    "kund": {
+      "label": "Stepped kund (square tank)",
+      "required": ["width", "levels"],
+      "optional": ["step_rise", "terrace_depth", "parapet", "water", "carved_bands"],
+      "estimated": ["width", "levels", "step_rise", "terrace_depth"],
+      "defaults": {
+        "width": 12.0,
+        "levels": 7,
+        "step_rise": 0.55,
+        "terrace_depth": 0.8,
+        "parapet": true,
+        "water": true,
+        "carved_bands": true
+      }
+    },
+    "vav": {
+      "label": "Linear stepwell (vav with pavilions)",
+      "required": ["bays", "width"],
+      "optional": ["storeys", "bay_length", "rise_per_bay", "pillars", "well", "ornament"],
+      "estimated": ["bays", "storeys", "bay_length", "rise_per_bay"],
+      "defaults": {
+        "bays": 5,
+        "storeys": 5,
+        "width": 6.0,
+        "bay_length": 6.0,
+        "rise_per_bay": 2.2,
+        "pillars": true,
+        "well": true,
+        "ornament": true
+      }
+    },
+    "temple": {
+      "label": "Temple with plinth, mandapa and shikhara",
+      "required": ["width", "length"],
+      "optional": ["height", "plinth_height", "pillars", "dome", "steps", "ornament"],
+      "estimated": ["width", "length", "height", "plinth_height"],
+      "defaults": {
+        "width": 14.0,
+        "length": 22.0,
+        "height": 10.0,
+        "plinth_height": 1.2,
+        "pillars": true,
+        "dome": true,
+        "steps": true,
+        "ornament": true
+      }
+    },
+    "mosque": {
+      "label": "Mosque with prayer hall, arcade and dome",
+      "required": ["width", "length"],
+      "optional": ["height", "domes", "minarets", "arcade_bays", "steps", "ornament"],
+      "estimated": ["width", "length", "height", "domes", "minarets"],
+      "defaults": {
+        "width": 18.0,
+        "length": 26.0,
+        "height": 7.0,
+        "domes": 1,
+        "minarets": 2,
+        "arcade_bays": 5,
+        "steps": true,
+        "ornament": true
+      }
+    },
+    "fort": {
+      "label": "Fort ramparts, bastions and gatehouse",
+      "required": ["width", "length"],
+      "optional": ["wall_height", "wall_thickness", "bastions", "gate", "battlements"],
+      "estimated": ["width", "length", "wall_height", "wall_thickness"],
+      "defaults": {
+        "width": 60.0,
+        "length": 80.0,
+        "wall_height": 8.0,
+        "wall_thickness": 2.4,
+        "bastions": 4,
+        "gate": true,
+        "battlements": true
+      }
+    },
+    "palace": {
+      "label": "Palace courtyard with pavilions and jharokhas",
+      "required": ["width", "length"],
+      "optional": ["height", "storeys", "pillars", "dome", "courtyard", "ornament"],
+      "estimated": ["width", "length", "height", "storeys"],
+      "defaults": {
+        "width": 26.0,
+        "length": 34.0,
+        "height": 9.0,
+        "storeys": 2,
+        "pillars": true,
+        "dome": true,
+        "courtyard": true,
+        "ornament": true
+      }
+    },
+    "generic": {
+      "label": "Generic heritage structure",
+      "required": ["width", "length"],
+      "optional": ["height", "plinth_height", "pillars", "dome", "steps", "ornament"],
+      "estimated": ["width", "length", "height"],
+      "defaults": {
+        "width": 16.0,
+        "length": 20.0,
+        "height": 7.0,
+        "plinth_height": 0.8,
+        "pillars": true,
+        "dome": false,
+        "steps": true,
+        "ornament": true
+      }
+    }
+  },
+  "category_typology": {
+    "stepwell": "vav",
+    "temple": "temple",
+    "mosque": "mosque",
+    "fort": "fort",
+    "palace": "palace",
+    "archaeological": "generic",
+    "craft": "generic",
+    "landscape": "generic",
+    "other": "generic"
+  },
+  "sites": {
+    "rani-ki-vav": {
+      "typology": "vav",
+      "params": {"bays": 7, "storeys": 7, "width": 6.5, "bay_length": 6.0, "rise_per_bay": 2.1, "well": true, "ornament": true, "seed": 21},
+      "note": "Seven-storey vav; dimensions are approximate and derived from published descriptions."
+    },
+    "adalaj": {
+      "typology": "vav",
+      "params": {"bays": 5, "storeys": 5, "width": 6.0, "bay_length": 6.0, "rise_per_bay": 2.2, "well": true, "ornament": true, "seed": 11},
+      "note": "Five-storey vav with octagonal well; dimensions are approximate."
+    },
+    "dada-harir": {
+      "typology": "vav",
+      "params": {"bays": 4, "storeys": 4, "width": 5.5, "bay_length": 5.5, "rise_per_bay": 2.0, "well": true, "ornament": true}
+    },
+    "chand-baori": {
+      "typology": "kund",
+      "params": {"levels": 13, "width": 14.0, "step_rise": 0.5, "terrace_depth": 0.7, "parapet": true, "water": true, "carved_bands": true, "seed": 7},
+      "note": "Deep square kund; the 13 terrace levels are an estimate from published photographs."
+    },
+    "modhera": {
+      "typology": "kund",
+      "params": {"levels": 6, "width": 12.0, "step_rise": 0.45, "terrace_depth": 0.8, "parapet": true, "water": true, "carved_bands": true, "seed": 9},
+      "note": "Surya Kund stepped tank at Modhera; the temple itself is not modelled."
+    },
+    "hampi-stepped-tank": {
+      "typology": "kund",
+      "params": {"levels": 5, "width": 8.0, "step_rise": 0.45, "terrace_depth": 0.65, "parapet": false, "water": true, "carved_bands": false, "seed": 5}
+    },
+    "toorji-ka-jhalra": {
+      "typology": "kund",
+      "params": {"levels": 7, "width": 9.0, "step_rise": 0.55, "terrace_depth": 0.7, "parapet": true, "water": true, "carved_bands": true}
+    },
+    "agrasen-ki-baoli": {
+      "typology": "kund",
+      "params": {"levels": 5, "width": 8.0, "step_rise": 0.5, "terrace_depth": 0.7, "parapet": true, "water": true, "carved_bands": true}
+    },
+    "champaner": {
+      "typology": "fort",
+      "params": {"width": 70.0, "length": 90.0, "wall_height": 9.0, "wall_thickness": 2.6, "bastions": 4, "gate": true, "battlements": true}
+    },
+    "uparkot": {
+      "typology": "fort",
+      "params": {"width": 55.0, "length": 75.0, "wall_height": 8.0, "wall_thickness": 2.4, "bastions": 4, "gate": true, "battlements": true}
+    },
+    "aina-mahal": {
+      "typology": "palace",
+      "params": {"width": 24.0, "length": 32.0, "height": 8.0, "storeys": 2, "pillars": true, "dome": true, "courtyard": true, "ornament": true}
+    },
+    "dholavira": {
+      "typology": "generic",
+      "params": {"width": 22.0, "length": 28.0, "height": 4.0, "plinth_height": 0.5, "pillars": false, "dome": false, "steps": true, "ornament": false}
+    },
+    "lothal": {
+      "typology": "generic",
+      "params": {"width": 20.0, "length": 26.0, "height": 3.5, "plinth_height": 0.4, "pillars": false, "dome": false, "steps": true, "ornament": false}
+    }
+  }
+}
