@@ -1,9 +1,9 @@
 {
   "assets": {
     "data": {
-      "url": "https://github.com/AkshataKapre017/Virasat3D/releases/download/deploy-assets/heritagelens-data-0364836717c3.tar.gz",
-      "sha256": "0364836717c35fce0103dbcdd7a8dd0ec7a2238dc1b99a1593711feea879b3e9",
-      "bytes": 22964120,
+      "url": "https://github.com/AkshataKapre017/Virasat3D/releases/download/deploy-assets/heritagelens-data-ff27128b559c.tar.gz",
+      "sha256": "ff27128b559c5f7c87f08f755269a034ebcd14f932cdc20e48c9597f17046242",
+      "bytes": 26093671,
       "dest": "backend/var"
     },
     "model": {
